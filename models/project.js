@@ -13,4 +13,4 @@ const getProjects = (callback) => {
     projectCollection.find({}),toArray(callback);
 }
 
-module.exports = {retrieveProjects, createProjects}
+//module.exports = {retrieveProjects, createProjects}
