@@ -1,19 +1,15 @@
-let client = require("../dbConnect"); 
-let projectCollection; 
+var client = require("../dbConnect.js");
+var projectCollection;
 
-setTimeout(() => {
-    projectCollection = client.db().collection("Pets");
-}, 2000)
-
-
-//insert project....
-const insertProjects = (project,callback) => {
-    projectCollection.insert(project,callback);
-}
+projectCollection = client.db().collection("Pets");
 
 // get project...
 const getProjects = (callback) => {
-    projectCollection.find({}).toArray(callback);
-}
+  projectCollection.find({}).toArray(callback);
+};
 
-module.exports = {insertProjects, getProjects}
+const insertProjects = (project, callback) => {
+  projectCollection.insert(project, callback);
+};
+
+module.exports = { getProjects, insertProjects };
